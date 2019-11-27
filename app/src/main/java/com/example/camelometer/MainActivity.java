@@ -8,6 +8,8 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
 
+import java.text.DecimalFormat;
+
 public class MainActivity extends AppCompatActivity {
     public void calculateWeight(View view) {
 
@@ -42,8 +44,8 @@ public class MainActivity extends AppCompatActivity {
         //product of FinalWeightDoublePow and 6.46 X 10 to the -7
         Double finalWeightDoublePowWow = finalWeightDoublePow * 0.000000646;
 
-
-
+        //round to two decimal places
+        DecimalFormat numberFormat = new DecimalFormat("#.00");
 
 
 
@@ -52,15 +54,17 @@ public class MainActivity extends AppCompatActivity {
 
 
         //Convert number back to String
-        String finalWeightString = Double.toString(finalWeightDoublePowWow);
+        String finalWeightString = numberFormat.format(finalWeightDoublePowWow);
 
         //Log number in Log Cat
-        Log.i( "Entered Value", finalWeightString);
+        Log.i( "Entered Value", numberFormat.format(finalWeightDoublePowWow));
+
+
 
 
         //Change the value of the finalWeight TextView to the final number
         final TextView textViewToChange = (TextView) findViewById(R.id.finalWeight);
-        textViewToChange.setText(finalWeightString);
+        textViewToChange.setText(finalWeightString + "kg");
     }
 
     @Override
