@@ -3,10 +3,12 @@ package com.example.camelometer;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
+import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.text.DecimalFormat;
 
@@ -21,50 +23,77 @@ public class MainActivity extends AppCompatActivity {
 
         //Converts to String, then Converts to Double (HEIGHT WITHERS)
         String heightWithersString = heightWithers.getText().toString();
-        Double heightWithersDouble = Double.parseDouble(heightWithersString);
+        Double heightWithersDouble = 0.0;
 
         //Converts to String, then Converts to Double (CHEST GIRTH)
         String chestGirthString = chestGirth.getText().toString();
-        Double chestGirthDouble = Double.parseDouble(chestGirthString);
+        Double chestGirthDouble = 0.0;
 
         //Converts to String, then Converts to Double (HUMP GIRTH)
         String humpGirthString = humpGirth.getText().toString();
-        Double humpGirthDouble = Double.parseDouble(humpGirthString);
+        Double humpGirthDouble = 0.0;
 
 
+        //Make sure all fields filled before calculating
+        boolean canCalculate = true;
+
+        if (TextUtils.isEmpty(heightWithersString)) {
+            canCalculate = false;
+            heightWithers.setError("Required Field");
+            Toast withersEmptyToast = Toast.makeText(this,"Add Height Withers",Toast.LENGTH_SHORT);
+            withersEmptyToast.show();
+        } else {
+            Log.i("Heads Up", "Has a value");
+            heightWithersDouble = Double.parseDouble(heightWithersString);
+        }
+
+        if (TextUtils.isEmpty(chestGirthString)) {
+            canCalculate = false;
+            chestGirth.setError("Required Field");
+            Toast chestEmptyToast = Toast.makeText(this,"Add Chest Girth",Toast.LENGTH_SHORT);
+            chestEmptyToast.show();
+        } else {
+            Log.i("Heads Up", "Has a value");
+            heightWithersDouble = Double.parseDouble(chestGirthString);
+        }
+
+        if (TextUtils.isEmpty(humpGirthString)) {
+            canCalculate = false;
+            humpGirth.setError("Required Field");
+            Toast humpEmptyToast = Toast.makeText(this,"Add Hump Girth",Toast.LENGTH_SHORT);
+            humpEmptyToast.show();
+        } else {
+            Log.i("Heads Up", "Has a value");
+            heightWithersDouble = Double.parseDouble(humpGirthString);
+        }
 
 
+        if (canCalculate) {
+            // Add All Animal Dimensions
+            Double finalWeightDouble = (heightWithersDouble + chestGirthDouble + humpGirthDouble);
 
-        // Add All Animal Dimensions
-        Double finalWeightDouble = (heightWithersDouble + chestGirthDouble + humpGirthDouble);
+            //Animal dimension to the power of 3.17
+            Double finalWeightDoublePow = Math.pow(finalWeightDouble, 3.17);
 
-        //Animal dimension to the power of 3.17
-        Double finalWeightDoublePow = Math.pow(finalWeightDouble, 3.17);
+            //product of FinalWeightDoublePow and 6.46 X 10 to the -7
+            Double finalWeightDoublePowWow = finalWeightDoublePow * 0.000000646;
 
-        //product of FinalWeightDoublePow and 6.46 X 10 to the -7
-        Double finalWeightDoublePowWow = finalWeightDoublePow * 0.000000646;
+            //round to two decimal places
+            DecimalFormat numberFormat = new DecimalFormat("#.00");
 
-        //round to two decimal places
-        DecimalFormat numberFormat = new DecimalFormat("#.00");
+            //Convert number back to String
+            String finalWeightString = numberFormat.format(finalWeightDoublePowWow);
 
+            //Log number in Log Cat
+            Log.i( "Entered Value", numberFormat.format(finalWeightDoublePowWow));
 
+            //Change the value of the finalWeight TextView to the final number
+            final TextView textViewToChange = (TextView) findViewById(R.id.finalWeight);
+            textViewToChange.setText(finalWeightString + "kg");
+        } else {
+            Log.i("Heads Up", "Could not calculate");
+        }
 
-
-
-
-
-        //Convert number back to String
-        String finalWeightString = numberFormat.format(finalWeightDoublePowWow);
-
-        //Log number in Log Cat
-        Log.i( "Entered Value", numberFormat.format(finalWeightDoublePowWow));
-
-
-
-
-        //Change the value of the finalWeight TextView to the final number
-        final TextView textViewToChange = (TextView) findViewById(R.id.finalWeight);
-        textViewToChange.setText(finalWeightString + "kg");
     }
 
     @Override
