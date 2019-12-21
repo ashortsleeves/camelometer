@@ -24,7 +24,7 @@ public class MainActivity extends AppCompatActivity {
         }
 
 
-        Intent animalSelectionPage = new Intent(MainActivity.this, CamelActivity.class);
+        Intent animalSelectionPage = new Intent(MainActivity.this, AnimalSelectionActivity.class);
         MainActivity.this.startActivity(animalSelectionPage);
 
 
@@ -39,6 +39,7 @@ public class MainActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
+        //Hide the stupid bar on the top the shows the name of the app
         getSupportActionBar().hide();
     }
 }

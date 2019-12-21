@@ -103,5 +103,8 @@ public class CamelActivity extends  AppCompatActivity{
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_camel);
 
+
+        //Hide the stupid bar on the top the shows the name of the app
+        getSupportActionBar().hide();
     }
 }

@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".AnimalSelectionActivity">
+
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/leftVerticalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_begin="100dp" />
+
+    <androidx.constraintlayout.widget.Guideline
+        android:id="@+id/rightVerticalGuideline"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintGuide_end="100dp"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/camelImage"
+        android:tag="camel"
+        android:layout_width="109dp"
+        android:layout_height="73dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="45dp"
+        android:onClick="selectAnimal"
+        app:layout_constraintStart_toStartOf="@id/leftVerticalGuideline"
+        app:layout_constraintEnd_toEndOf="@id/leftVerticalGuideline"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/camelsilhouette" />
+
+    <Button
+        android:id="@+id/camelButton"
+        android:tag="camel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="50dp"
+        android:layout_marginLeft="50dp"
+        android:layout_marginTop="56dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginRight="144dp"
+        android:text="camel"
+        android:onClick="selectAnimal"
+        app:layout_constraintStart_toStartOf="@id/rightVerticalGuideline"
+        app:layout_constraintEnd_toEndOf="@id/rightVerticalGuideline"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <ImageView
+        android:id="@+id/goatImage"
+        android:layout_width="82dp"
+        android:layout_height="124dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginLeft="20dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toStartOf="@id/leftVerticalGuideline"
+        app:layout_constraintEnd_toEndOf="@id/leftVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/camelImage"
+        app:srcCompat="@drawable/goatsilhouette" />
+
+    <Button
+        android:id="@+id/goatButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="78dp"
+        android:layout_marginLeft="78dp"
+        android:layout_marginTop="75dp"
+        android:layout_marginEnd="144dp"
+        android:layout_marginRight="144dp"
+        android:text="Sheep/Goat"
+        app:layout_constraintStart_toStartOf="@id/rightVerticalGuideline"
+        app:layout_constraintEnd_toEndOf="@id/rightVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/camelButton" />
+
+    <ImageView
+        android:id="@+id/cattleImage"
+        android:layout_width="92dp"
+        android:layout_height="97dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="@id/leftVerticalGuideline"
+        app:layout_constraintStart_toStartOf="@id/leftVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/goatImage"
+        app:srcCompat="@drawable/cattlesilhouette" />
+
+    <Button
+        android:id="@+id/cattleButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="90dp"
+        android:text="cattle"
+        app:layout_constraintEnd_toEndOf="@id/rightVerticalGuideline"
+        app:layout_constraintStart_toStartOf="@id/rightVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/goatButton" />
+
+
+    <ImageView
+        android:id="@+id/donkeyImage"
+        android:layout_width="97dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="30dp"
+        app:layout_constraintEnd_toEndOf="@id/leftVerticalGuideline"
+        app:layout_constraintStart_toStartOf="@id/leftVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/cattleImage"
+        app:srcCompat="@drawable/donkeysilhouette" />
+
+    <Button
+        android:id="@+id/donkeyButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:text="donkey"
+        app:layout_constraintEnd_toEndOf="@id/rightVerticalGuideline"
+        app:layout_constraintStart_toStartOf="@id/rightVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/cattleButton" />
+
+    <ImageView
+        android:id="@+id/horseImage"
+        android:layout_width="97dp"
+        android:layout_height="68dp"
+        android:layout_marginTop="50dp"
+        app:layout_constraintEnd_toEndOf="@id/leftVerticalGuideline"
+        app:layout_constraintStart_toStartOf="@id/leftVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/donkeyImage"
+        app:srcCompat="@drawable/housesilhouette" />
+
+    <Button
+        android:id="@+id/horseButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="70dp"
+        android:text="horse"
+        app:layout_constraintEnd_toEndOf="@id/rightVerticalGuideline"
+        app:layout_constraintStart_toStartOf="@id/rightVerticalGuideline"
+        app:layout_constraintTop_toBottomOf="@+id/donkeyButton" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
