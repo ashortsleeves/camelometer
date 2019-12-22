@@ -2,6 +2,7 @@ package com.example.camelometer;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.View;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -11,10 +12,22 @@ public class AnimalSelectionActivity extends  AppCompatActivity{
     Intent animalToEstiamte;
 
     public void selectAnimal(View view) {
-        if (view.getTag().toString().equals("camel")){
-            animalToEstiamte = new Intent(AnimalSelectionActivity.this,CamelActivity.class);
+        String animalFromTag = view.getTag().toString();
 
+
+        if (animalFromTag.equals("camel")){
+            animalToEstiamte = new Intent(AnimalSelectionActivity.this,CamelActivity.class);
+        } else if (animalFromTag.equals("goat")){
+            animalToEstiamte = new Intent(AnimalSelectionActivity.this,GoatActivity.class);
+        } else if (animalFromTag.equals("cattle")){
+            animalToEstiamte = new Intent(AnimalSelectionActivity.this,MainActivity.class);
+        } else if (animalFromTag.equals("donkey")){
+            animalToEstiamte = new Intent(AnimalSelectionActivity.this,MainActivity.class);
+        } else if (animalFromTag.equals("horse")){
+            animalToEstiamte = new Intent(AnimalSelectionActivity.this,MainActivity.class);
         }
+
+        Log.i("Animal Selection", animalFromTag);
 
 
         AnimalSelectionActivity.this.startActivity(animalToEstiamte);

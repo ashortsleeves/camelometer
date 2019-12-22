@@ -55,11 +55,13 @@
 
     <ImageView
         android:id="@+id/goatImage"
+        android:tag="goat"
         android:layout_width="82dp"
         android:layout_height="124dp"
         android:layout_marginStart="20dp"
         android:layout_marginLeft="20dp"
         android:layout_marginTop="15dp"
+        android:onClick="selectAnimal"
         app:layout_constraintStart_toStartOf="@id/leftVerticalGuideline"
         app:layout_constraintEnd_toEndOf="@id/leftVerticalGuideline"
         app:layout_constraintTop_toBottomOf="@+id/camelImage"
@@ -67,6 +69,7 @@
 
     <Button
         android:id="@+id/goatButton"
+        android:tag="goat"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="78dp"
@@ -75,15 +78,18 @@
         android:layout_marginEnd="144dp"
         android:layout_marginRight="144dp"
         android:text="Sheep/Goat"
+        android:onClick="selectAnimal"
         app:layout_constraintStart_toStartOf="@id/rightVerticalGuideline"
         app:layout_constraintEnd_toEndOf="@id/rightVerticalGuideline"
         app:layout_constraintTop_toBottomOf="@+id/camelButton" />
 
     <ImageView
         android:id="@+id/cattleImage"
+        android:tag="cattle"
         android:layout_width="92dp"
         android:layout_height="97dp"
         android:layout_marginTop="30dp"
+        android:onClick="selectAnimal"
         app:layout_constraintEnd_toEndOf="@id/leftVerticalGuideline"
         app:layout_constraintStart_toStartOf="@id/leftVerticalGuideline"
         app:layout_constraintTop_toBottomOf="@+id/goatImage"
@@ -91,10 +97,12 @@
 
     <Button
         android:id="@+id/cattleButton"
+        android:tag="cattle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="90dp"
         android:text="cattle"
+        android:onClick="selectAnimal"
         app:layout_constraintEnd_toEndOf="@id/rightVerticalGuideline"
         app:layout_constraintStart_toStartOf="@id/rightVerticalGuideline"
         app:layout_constraintTop_toBottomOf="@+id/goatButton" />
@@ -102,9 +110,11 @@
 
     <ImageView
         android:id="@+id/donkeyImage"
+        android:tag="donkey"
         android:layout_width="97dp"
         android:layout_height="68dp"
         android:layout_marginTop="30dp"
+        android:onClick="selectAnimal"
         app:layout_constraintEnd_toEndOf="@id/leftVerticalGuideline"
         app:layout_constraintStart_toStartOf="@id/leftVerticalGuideline"
         app:layout_constraintTop_toBottomOf="@+id/cattleImage"
@@ -112,19 +122,23 @@
 
     <Button
         android:id="@+id/donkeyButton"
+        android:tag="donkey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="60dp"
         android:text="donkey"
+        android:onClick="selectAnimal"
         app:layout_constraintEnd_toEndOf="@id/rightVerticalGuideline"
         app:layout_constraintStart_toStartOf="@id/rightVerticalGuideline"
         app:layout_constraintTop_toBottomOf="@+id/cattleButton" />
 
     <ImageView
         android:id="@+id/horseImage"
+        android:tag="horse"
         android:layout_width="97dp"
         android:layout_height="68dp"
         android:layout_marginTop="50dp"
+        android:onClick="selectAnimal"
         app:layout_constraintEnd_toEndOf="@id/leftVerticalGuideline"
         app:layout_constraintStart_toStartOf="@id/leftVerticalGuideline"
         app:layout_constraintTop_toBottomOf="@+id/donkeyImage"
@@ -132,10 +146,12 @@
 
     <Button
         android:id="@+id/horseButton"
+        android:tag="horse"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="70dp"
         android:text="horse"
+        android:onClick="selectAnimal"
         app:layout_constraintEnd_toEndOf="@id/rightVerticalGuideline"
         app:layout_constraintStart_toStartOf="@id/rightVerticalGuideline"
         app:layout_constraintTop_toBottomOf="@+id/donkeyButton" />

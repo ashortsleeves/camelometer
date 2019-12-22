@@ -16,8 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".CamelActivity"/>
         <activity android:name=".AnimalSelectionActivity"/>
+        <activity android:name=".CamelActivity"/>
+        <activity android:name=".GoatActivity"/>
+        <activity android:name=".CattleActivity"/>
+        <activity android:name=".DonkeyActivity"/>
+        <activity android:name=".HorseActivity"/>
 
     </application>
 
