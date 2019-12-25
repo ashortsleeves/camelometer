@@ -1,5 +1,6 @@
 package com.example.camelometer;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
@@ -10,6 +11,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import java.text.DecimalFormat;
+import java.util.HashMap;
 
 public class GoatActivity extends  AppCompatActivity{
 
@@ -44,13 +46,25 @@ public class GoatActivity extends  AppCompatActivity{
 
                 Log.i("Info", "Look up goat size in table");
 
-                heartGirthOnlyWarningTextView.setVisibility(View.VISIBLE);
-
                 heartGirthDouble = Double.parseDouble(heartGirthString);
 
-                Double finalWeightDouble = findWeightFromChart(heartGirthDouble);
+                int hearthGirthRoundedInt = (int) Math.rint(heartGirthDouble);
 
-                displayFinalWeight(finalWeightDouble);
+                if (hearthGirthRoundedInt < 25 || hearthGirthRoundedInt > 107) {
+
+                    Toast.makeText(this, "Unable to calculate. Enter a body length and try again.", Toast.LENGTH_LONG).show();
+
+                    bodyLengthTextView.setError("Required Field");
+
+                } else {
+
+                    String finalWeightString = findWeightFromChart(hearthGirthRoundedInt);
+
+                    finalWeightTextView.setText(finalWeightString);
+
+                    heartGirthOnlyWarningTextView.setVisibility(View.VISIBLE);
+                }
+
 
             } else {
 
@@ -70,21 +84,102 @@ public class GoatActivity extends  AppCompatActivity{
     }
 
 
-    public double findWeightFromChart(Double heartGirthDouble){
-        double finalWeightDouble = 0.0;
+    public String findWeightFromChart(int hearthGirthRoundedInt){
 
-        //TODO need to somehow reference the chart, the challenge is that we have some gaps to factor in
-        // according to the chart goes like this:
-        // ....................
-        // 25cm = 2kg
-        // 28cm = 2.5kg
-        // ...etc
-        // ....................
-        // So what do we do if an goat measures 26cm or 27cm?
-        // Maybe we can just calculate the weight or maybe we can return a range
+        HashMap<String, String> goatWeightChart = new HashMap<String, String>();
 
 
-        return finalWeightDouble;
+        goatWeightChart.put("25","2.0");
+        goatWeightChart.put("26","2.0 – 2.5");
+        goatWeightChart.put("27","2.0 – 2.5");
+        goatWeightChart.put("28","2.5");
+        goatWeightChart.put("29","2.5 – 3.0");
+        goatWeightChart.put("30","3.0");
+        goatWeightChart.put("31","3.0 – 4.0");
+        goatWeightChart.put("32","3.0 – 4.0");
+        goatWeightChart.put("33","4.0");
+        goatWeightChart.put("34","4.0 – 5.0");
+        goatWeightChart.put("35","4.0 – 5.0");
+        goatWeightChart.put("36","5.0");
+        goatWeightChart.put("37","5.0 – 6.0");
+        goatWeightChart.put("38","6.0");
+        goatWeightChart.put("39","6.0 – 7.5");
+        goatWeightChart.put("40","6.0 – 7.5");
+        goatWeightChart.put("41","7.5 – 11.5");
+        goatWeightChart.put("42","7.5 – 11.5");
+        goatWeightChart.put("43","9.5");
+        goatWeightChart.put("44","9.5 – 11.5");
+        goatWeightChart.put("45","9.5 – 11.5");
+        goatWeightChart.put("46","11.5");
+        goatWeightChart.put("47","11.5 – 13.5");
+        goatWeightChart.put("48","13.5");
+        goatWeightChart.put("49","13.5 – 15.5");
+        goatWeightChart.put("50","13.5 – 15.5");
+        goatWeightChart.put("51","15.5");
+        goatWeightChart.put("52","15.5 – 17.5");
+        goatWeightChart.put("53","17.5");
+        goatWeightChart.put("54","17.5 – 19.5");
+        goatWeightChart.put("55","17.5 – 19.5");
+        goatWeightChart.put("56","19.5");
+        goatWeightChart.put("57","19.5 – 22.5");
+        goatWeightChart.put("58","22.5");
+        goatWeightChart.put("59","22.5 – 25.0");
+        goatWeightChart.put("60","22.5 – 25.0");
+        goatWeightChart.put("61","25.0");
+        goatWeightChart.put("62","25.0 – 28.5");
+        goatWeightChart.put("63","28.5");
+        goatWeightChart.put("64","28.5 – 31.5");
+        goatWeightChart.put("65","28.5 – 31.5");
+        goatWeightChart.put("66","31.5");
+        goatWeightChart.put("67","31.5 – 34.5");
+        goatWeightChart.put("68","34.5");
+        goatWeightChart.put("69","34.5 – 37.5");
+        goatWeightChart.put("70","34.5 – 37.5");
+        goatWeightChart.put("71","37.5");
+        goatWeightChart.put("72","37.5 – 40.5");
+        goatWeightChart.put("73","40.5");
+        goatWeightChart.put("74","40.5 – 43.5");
+        goatWeightChart.put("75","40.5 – 43.5");
+        goatWeightChart.put("76","43.5");
+        goatWeightChart.put("77","43.5 – 46.5");
+        goatWeightChart.put("78","43.5 – 46.5");
+        goatWeightChart.put("79","46.5");
+        goatWeightChart.put("80","46.5 – 50.5");
+        goatWeightChart.put("81","50.5");
+        goatWeightChart.put("82","50.5 – 55");
+        goatWeightChart.put("83","50.5 – 55");
+        goatWeightChart.put("84","55.0");
+        goatWeightChart.put("85","55.0 – 60.0");
+        goatWeightChart.put("86","60.0");
+        goatWeightChart.put("87","60.0 – 65.0");
+        goatWeightChart.put("88","60.0 – 65.0");
+        goatWeightChart.put("89","65.0");
+        goatWeightChart.put("90","65.0 – 70.0");
+        goatWeightChart.put("91","70.0");
+        goatWeightChart.put("92","70.0 – 75.0");
+        goatWeightChart.put("93","70.0 – 75.0");
+        goatWeightChart.put("94","75.0");
+        goatWeightChart.put("95","75.0 – 80.0");
+        goatWeightChart.put("96","80.0");
+        goatWeightChart.put("97","80.0 – 85.0");
+        goatWeightChart.put("98","80.0 – 85.0");
+        goatWeightChart.put("99","85.0");
+        goatWeightChart.put("100","85.0 – 90.0");
+        goatWeightChart.put("101","85.0 – 90.0");
+        goatWeightChart.put("102","90.0");
+        goatWeightChart.put("103","90.0 – 95.0");
+        goatWeightChart.put("104","95.0");
+        goatWeightChart.put("105","95.0 – 100.0");
+        goatWeightChart.put("106","95.0 – 100.0");
+        goatWeightChart.put("107","100.0");
+
+
+        String weightFromChartString = goatWeightChart.get(Integer.toString(hearthGirthRoundedInt));
+
+        weightFromChartString+= " kg";
+
+        return weightFromChartString;
+
     }
 
 
@@ -117,6 +212,6 @@ public class GoatActivity extends  AppCompatActivity{
 
 
         //Hide the stupid bar on the top the shows the name of the app
-        //getSupportActionBar().hide();
+        getSupportActionBar().hide();
     }
 }
