@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">Camelometer</string>
 
+    <!-- import vs domestic (for cattle) -->
+    <string-array name="import_domestic">
+        <item>import</item>
+        <item>domestic</item>
+    </string-array>
+
 </resources>

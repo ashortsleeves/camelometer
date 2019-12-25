@@ -193,6 +193,10 @@ public class GoatActivity extends  AppCompatActivity{
 
         finalWeightTextView.setText(finalWeightString);
 
+        heartGirthTextView.setError(null);
+        bodyLengthTextView.setError(null);
+
+
     }
 
 
