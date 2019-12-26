@@ -52,7 +52,6 @@ public class DonkeyActivity extends  AppCompatActivity{
 
                 Log.i("Info", "Calculate with heart girth only");
 
-                Log.i("Info", sexOfDonkeySpinner.getSelectedItem();
 
 
 
