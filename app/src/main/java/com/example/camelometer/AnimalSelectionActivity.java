@@ -22,7 +22,7 @@ public class AnimalSelectionActivity extends  AppCompatActivity{
         } else if (animalFromTag.equals("cattle")){
             animalToEstiamte = new Intent(AnimalSelectionActivity.this,CattleActivity.class);
         } else if (animalFromTag.equals("donkey")){
-            animalToEstiamte = new Intent(AnimalSelectionActivity.this,MainActivity.class);
+            animalToEstiamte = new Intent(AnimalSelectionActivity.this,DonkeyActivity.class);
         } else if (animalFromTag.equals("horse")){
             animalToEstiamte = new Intent(AnimalSelectionActivity.this,MainActivity.class);
         }

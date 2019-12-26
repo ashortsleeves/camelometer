@@ -5,13 +5,12 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-
     <TextView
         android:id="@+id/textView"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
-        android:text="Find approximate weight of Cattle without a scale."
+        android:text="Find approximate weight of Donkey without a scale."
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.5"
@@ -55,38 +54,69 @@
         android:id="@+id/bodyLengthOptional"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginEnd="324dp"
+        android:layout_marginRight="324dp"
+        android:layout_marginBottom="2dp"
         android:text="*optional"
-        app:layout_constraintBottom_toTopOf="@+id/countryOfOrigin"
-        app:layout_constraintStart_toStartOf="@id/bodyLength"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bodyLength" />
 
 
+    <!-- top margin for this view is slightly larger (+5dp) to match spinner -->
     <TextView
-        android:id="@+id/countryOfOrigin"
+        android:id="@+id/sexOfDonkey"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:textSize="20dp"
-        android:text="Origin:"
+        android:layout_marginTop="20dp"
         android:onClick="expandSpinner"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:text="Sex of Donkey:"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bodyLengthOptional"
-        app:layout_constraintVertical_bias="0.084" />
+        app:layout_constraintTop_toBottomOf="@+id/bodyLengthOptional" />
 
 
     <Spinner
-        android:id="@+id/importDomesticSpinner"
+        android:id="@+id/sexOfDonkeySpinner"
+        style="@style/Widget.AppCompat.Spinner.Underlined"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_margin="15dp"
-        android:entries="@array/import_domestic"
-        style="@style/Widget.AppCompat.Spinner.Underlined"
-        app:layout_constraintStart_toEndOf="@id/countryOfOrigin"
-        app:layout_constraintTop_toBottomOf="@id/bodyLengthOptional" />
+        android:layout_marginTop="15dp"
+        android:entries="@array/sex_of_animal"
+        app:layout_constraintTop_toBottomOf="@id/bodyLengthOptional"
+        app:layout_constraintStart_toEndOf="@id/sexOfDonkey" />
+
+    <!-- top margin for this view is slightly larger (+5dp) to match under3years check box -->
+    <TextView
+        android:id="@+id/under3Years"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="25dp"
+        android:onClick="toggleDonkeyAge"
+        android:textSize="20dp"
+        android:text="Less than 3 Years old:"
+        app:layout_constraintBottom_toTopOf="@+id/button"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sexOfDonkey" />
+
+    <CheckBox
+        android:id="@+id/under3YearsCheckBox"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="15dp"
+        app:layout_constraintStart_toEndOf="@id/under3Years"
+        app:layout_constraintTop_toBottomOf="@id/sexOfDonkey"
+        app:layout_constraintBottom_toTopOf="@id/button" />
+
 
     <Button
         android:id="@+id/button"
@@ -98,7 +128,7 @@
         android:onClick="calculateWeight"
         android:text="Estimate Body Weight"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/importDomesticSpinner"
+        app:layout_constraintTop_toBottomOf="@id/under3Years"
         app:layout_constraintStart_toStartOf="parent"/>
 
     <TextView
@@ -115,7 +145,7 @@
         android:text="0kg"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/importDomesticSpinner"
+        app:layout_constraintTop_toBottomOf="@id/under3Years"
         app:layout_constraintStart_toEndOf="@id/button"/>
 
     <TextView
@@ -131,7 +161,6 @@
         app:layout_constraintHorizontal_bias="1.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/button" />
-
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>

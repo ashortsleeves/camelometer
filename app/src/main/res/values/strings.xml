@@ -3,8 +3,17 @@
 
     <!-- import vs domestic (for cattle) -->
     <string-array name="import_domestic">
-        <item>import</item>
-        <item>domestic</item>
+        <item name="import">import</item>
+        <item name="domestic">domestic</item>
     </string-array>
+
+    <!-- sex of animal (for donkey) -->
+    <string-array name="sex_of_animal">
+        <item name="male">@string/male</item>
+        <item name="female">@string/female</item>
+    </string-array>
+
+    <string name="male">male</string>
+    <string name="female">female</string>
 
 </resources>

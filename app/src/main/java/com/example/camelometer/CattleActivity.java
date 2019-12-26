@@ -387,6 +387,12 @@ public class CattleActivity  extends  AppCompatActivity{
 
     }
 
+    public void expandSpinner(View view){
+
+        importDomesticSpinner.performClick();
+
+    }
+
 
 
     @Override
