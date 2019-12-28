@@ -28,6 +28,7 @@ public class DonkeyActivity extends  AppCompatActivity{
 
     String heartGirthString;
     String bodyLengthString;
+    String sexOfDonkey;
 
 
     public void calculateWeight(View view){
@@ -36,6 +37,10 @@ public class DonkeyActivity extends  AppCompatActivity{
 
         heartGirthString = heartGirthTextView.getText().toString();
         bodyLengthString = bodyLengthTextView.getText().toString();
+
+        sexOfDonkey = sexOfDonkeySpinner.getSelectedItem().toString();
+
+        double finalWeight;
 
         double heartGirthDouble;
         double bodyLengthDouble;
@@ -48,19 +53,44 @@ public class DonkeyActivity extends  AppCompatActivity{
 
         } else {
 
+            heartGirthDouble = Double.parseDouble(heartGirthTextView.getText().toString());
+
             if (bodyLengthString.isEmpty()){
 
                 Log.i("Info", "Calculate with heart girth only");
 
+                if (sexOfDonkey.equals("male")){
+                    //Male donkey weight = 0.018576 X (heart girth)^1.84107
+                    finalWeight = (double) 0.018576 * Math.pow(heartGirthDouble,1.84107);
 
+
+                } else {
+                    //Female donkey weight = 0.031255 X (hearth girth)^1.72888
+                    finalWeight = (double) 0.031255 * Math.pow(heartGirthDouble, 1.72888);
+
+                }
 
 
             } else {
 
-                Log.i("Info", "Calculate with heart girth AND body length");
+                bodyLengthDouble = Double.parseDouble(bodyLengthTextView.getText().toString());
+
+                if (under3YearsCheckbox.isChecked()){
+
+                    //(Heart Girth)^2 X Body Length/10,000
+
+                    finalWeight = Math.pow(heartGirthDouble,2) * bodyLengthDouble/10000;
+
+                } else {
+
+                    //(Heart Girth)^2 X Body Length/9,199.6
+
+                    finalWeight = Math.pow(heartGirthDouble,2) * bodyLengthDouble/9199.6;
+                }
 
             }
 
+            displayFinalWeight(finalWeight);
 
         }
 
