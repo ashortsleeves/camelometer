@@ -4,7 +4,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.widget.CheckBox;
-import android.widget.Spinner;
+import android.widget.RadioButton;
 import android.widget.TextView;
 import android.view.View;
 import android.widget.Toast;
@@ -22,9 +22,10 @@ public class DonkeyActivity extends  AppCompatActivity{
     TextView finalWeightTextView;
     TextView under3YearsTextView;
 
-    Spinner sexOfDonkeySpinner;
     CheckBox under3YearsCheckbox;
 
+    RadioButton maleDonkeyRadioButton;
+    RadioButton femaleDonkeyRadioButton;
 
     String heartGirthString;
     String bodyLengthString;
@@ -38,7 +39,7 @@ public class DonkeyActivity extends  AppCompatActivity{
         heartGirthString = heartGirthTextView.getText().toString();
         bodyLengthString = bodyLengthTextView.getText().toString();
 
-        sexOfDonkey = sexOfDonkeySpinner.getSelectedItem().toString();
+        sexOfDonkey = "male";
 
         double finalWeight;
 
@@ -59,7 +60,7 @@ public class DonkeyActivity extends  AppCompatActivity{
 
                 Log.i("Info", "Calculate with heart girth only");
 
-                if (sexOfDonkey.equals("male")){
+                if (maleDonkeyRadioButton.isChecked()){
                     //Male donkey weight = 0.018576 X (heart girth)^1.84107
                     finalWeight = (double) 0.018576 * Math.pow(heartGirthDouble,1.84107);
 
@@ -109,11 +110,6 @@ public class DonkeyActivity extends  AppCompatActivity{
         }
     }
 
-    public void expandSpinner(View view){
-
-        sexOfDonkeySpinner.performClick();
-
-    }
 
     public void displayFinalWeight(Double finalWeightDouble) {
 
@@ -139,13 +135,16 @@ public class DonkeyActivity extends  AppCompatActivity{
         setContentView(R.layout.activity_donkey);
 
         heartGirthOnlyWarningTextView = findViewById(R.id.heartGirthOnlyWarning);
+        heartGirthOnlyWarningTextView.setVisibility(View.INVISIBLE);
         heartGirthTextView = findViewById(R.id.heartGirth);
         bodyLengthTextView = findViewById(R.id.bodyLength);
         finalWeightTextView = findViewById(R.id.finalWeight);
         under3YearsTextView = findViewById(R.id.under3Years);
 
-        sexOfDonkeySpinner = findViewById(R.id.sexOfDonkeySpinner);
         under3YearsCheckbox = findViewById(R.id.under3YearsCheckBox);
+
+        maleDonkeyRadioButton = findViewById(R.id.maleDonkeyRadioButton);
+        femaleDonkeyRadioButton = findViewById(R.id.femaleDonkeyRadioButton);
 
 
         //Hide the stupid bar on the top the shows the name of the app
