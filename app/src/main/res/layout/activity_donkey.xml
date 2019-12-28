@@ -83,22 +83,21 @@
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
         android:layout_marginTop="20dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
         android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/sexOfDonkey"
         app:layout_constraintTop_toBottomOf="@+id/bodyLengthOptional">
+
         <RadioButton
             android:id="@+id/maleDonkeyRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/male"/>
+            android:text="@string/male" />
+
         <RadioButton
             android:id="@+id/femaleDonkeyRadioButton"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@string/female"/>
+            android:text="@string/female" />
     </RadioGroup>
 
 
@@ -113,7 +112,6 @@
         android:onClick="toggleDonkeyAge"
         android:text="Less than 3 Years old:"
         android:textSize="20dp"
-        app:layout_constraintBottom_toTopOf="@+id/button"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/sexOfDonkey" />
 
@@ -123,10 +121,9 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        app:layout_constraintBottom_toTopOf="@id/button"
+        android:layout_marginTop="25dp"
         app:layout_constraintStart_toEndOf="@id/under3Years"
-        app:layout_constraintTop_toBottomOf="@id/sexOfDonkey" />
+        app:layout_constraintTop_toBottomOf="@+id/sexOfDonkey" />
 
 
     <Button
@@ -135,7 +132,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="40dp"
         android:onClick="calculateWeight"
         android:text="Estimate Body Weight"
         android:textStyle="bold"
@@ -148,9 +145,7 @@
         android:layout_height="60dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/my_border"
         android:gravity="center"
         android:text="0kg"

@@ -55,38 +55,54 @@
         android:id="@+id/bodyLengthOptional"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginLeft="15dp"
+        android:layout_marginStart="28dp"
+        android:layout_marginLeft="28dp"
+        android:layout_marginEnd="324dp"
+        android:layout_marginRight="324dp"
         android:text="*optional"
-        app:layout_constraintBottom_toTopOf="@+id/countryOfOrigin"
-        app:layout_constraintStart_toStartOf="@id/bodyLength"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/bodyLength" />
 
 
+    <!-- top margin for this view is slightly larger (+5dp) to match spinner -->
     <TextView
-        android:id="@+id/countryOfOrigin"
+        android:id="@+id/origin"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:textSize="20dp"
-        android:text="Origin:"
+        android:layout_marginTop="20dp"
         android:onClick="expandSpinner"
-        app:layout_constraintBottom_toTopOf="@+id/button"
-        app:layout_constraintHorizontal_bias="1.0"
+        android:text="Origin:"
+        android:textSize="20dp"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bodyLengthOptional"
-        app:layout_constraintVertical_bias="0.084" />
+        app:layout_constraintTop_toBottomOf="@+id/bodyLengthOptional" />
 
+    <RadioGroup
+        android:layout_width="225dp"
+        android:layout_height="29dp"
+        android:layout_marginStart="15dp"
+        android:layout_marginLeft="15dp"
+        android:layout_marginTop="20dp"
+        android:gravity="left"
+        android:orientation="horizontal"
+        app:layout_constraintStart_toEndOf="@+id/origin"
+        app:layout_constraintTop_toBottomOf="@+id/bodyLengthOptional">
 
-    <Spinner
-        android:id="@+id/importDomesticSpinner"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_margin="15dp"
-        android:entries="@array/import_domestic"
-        style="@style/Widget.AppCompat.Spinner.Underlined"
-        app:layout_constraintStart_toEndOf="@id/countryOfOrigin"
-        app:layout_constraintTop_toBottomOf="@id/bodyLengthOptional" />
+        <RadioButton
+            android:id="@+id/domesticCattleRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/domesticCattle" />
+
+        <RadioButton
+            android:id="@+id/importCattleRadioButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/importCattle" />
+    </RadioGroup>
+
 
     <Button
         android:id="@+id/button"
@@ -94,29 +110,27 @@
         android:layout_height="60dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="40dp"
         android:onClick="calculateWeight"
         android:text="Estimate Body Weight"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/importDomesticSpinner"
-        app:layout_constraintStart_toStartOf="parent"/>
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/origin" />
 
     <TextView
         android:id="@+id/finalWeight"
         android:layout_width="180dp"
         android:layout_height="60dp"
-        android:layout_marginTop="15dp"
         android:layout_marginStart="15dp"
         android:layout_marginLeft="15dp"
-        android:layout_marginEnd="15dp"
-        android:layout_marginRight="15dp"
+        android:layout_marginTop="40dp"
         android:background="@drawable/my_border"
         android:gravity="center"
         android:text="0kg"
         android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintTop_toBottomOf="@id/importDomesticSpinner"
-        app:layout_constraintStart_toEndOf="@id/button"/>
+        app:layout_constraintStart_toEndOf="@id/button"
+        app:layout_constraintTop_toBottomOf="@+id/origin" />
 
     <TextView
         android:id="@+id/heartGirthOnlyWarning"

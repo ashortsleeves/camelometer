@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
+import android.widget.RadioButton;
 import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -20,8 +21,8 @@ public class CattleActivity  extends  AppCompatActivity{
     TextView bodyLengthTextView;
     TextView finalWeightTextView;
 
-    Spinner importDomesticSpinner;
-
+    RadioButton domesticCattleRadioButton;
+    RadioButton importCattleRadioButton;
 
     String heartGirthString;
     String bodyLengthString;
@@ -88,11 +89,9 @@ public class CattleActivity  extends  AppCompatActivity{
 
     public String findWeightFromChart(int hearthGirthRoundedInt){
 
-        String origin = importDomesticSpinner.getSelectedItem().toString();
-
         HashMap<String, String> cattleWeightChart = new HashMap<String, String>();
 
-        if (origin.equals("import")) {
+        if (importCattleRadioButton.isChecked()) {
 
             cattleWeightChart.put("66","37");
             cattleWeightChart.put("67","37 – 38");
@@ -387,12 +386,6 @@ public class CattleActivity  extends  AppCompatActivity{
 
     }
 
-    public void expandSpinner(View view){
-
-        importDomesticSpinner.performClick();
-
-    }
-
 
 
     @Override
@@ -409,8 +402,9 @@ public class CattleActivity  extends  AppCompatActivity{
         bodyLengthTextView = (TextView) findViewById(R.id.bodyLength);
         finalWeightTextView = (TextView) findViewById(R.id.finalWeight);
 
-        //Initiate Spinner
-        importDomesticSpinner = (Spinner) findViewById(R.id.importDomesticSpinner);
+        //Initiate Radio Butotns
+        domesticCattleRadioButton = findViewById(R.id.domesticCattleRadioButton);
+        importCattleRadioButton = findViewById(R.id.importCattleRadioButton);
 
 
         //Hide the stupid bar on the top the shows the name of the app
