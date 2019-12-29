@@ -40,9 +40,9 @@ public class CamelActivity extends  AppCompatActivity{
 
         if (TextUtils.isEmpty(heightWithersString)) {
             canCalculate = false;
-            heightWithers.setError("Required Field");
-            Toast withersEmptyToast = Toast.makeText(this,"Add Height Withers",Toast.LENGTH_SHORT);
-            withersEmptyToast.show();
+            heightWithers.setError(getString(R.string.requiredField));
+            //Toast withersEmptyToast = Toast.makeText(this,"Add Height Withers",Toast.LENGTH_SHORT);
+            //withersEmptyToast.show();
         } else {
             Log.i("Heads Up", "Has a value");
             heightWithersDouble = Double.parseDouble(heightWithersString);
@@ -50,9 +50,9 @@ public class CamelActivity extends  AppCompatActivity{
 
         if (TextUtils.isEmpty(chestGirthString)) {
             canCalculate = false;
-            chestGirth.setError("Required Field");
-            Toast chestEmptyToast = Toast.makeText(this,"Add Chest Girth",Toast.LENGTH_SHORT);
-            chestEmptyToast.show();
+            chestGirth.setError(getString(R.string.requiredField));
+            //Toast chestEmptyToast = Toast.makeText(this,"Add Chest Girth",Toast.LENGTH_SHORT);
+            //chestEmptyToast.show();
         } else {
             Log.i("Heads Up", "Has a value");
             heightWithersDouble = Double.parseDouble(chestGirthString);
@@ -60,9 +60,9 @@ public class CamelActivity extends  AppCompatActivity{
 
         if (TextUtils.isEmpty(humpGirthString)) {
             canCalculate = false;
-            humpGirth.setError("Required Field");
-            Toast humpEmptyToast = Toast.makeText(this,"Add Hump Girth",Toast.LENGTH_SHORT);
-            humpEmptyToast.show();
+            humpGirth.setError(getString(R.string.requiredField));
+            //Toast humpEmptyToast = Toast.makeText(this,"Add Hump Girth",Toast.LENGTH_SHORT);
+            //humpEmptyToast.show();
         } else {
             Log.i("Heads Up", "Has a value");
             heightWithersDouble = Double.parseDouble(humpGirthString);
@@ -92,6 +92,7 @@ public class CamelActivity extends  AppCompatActivity{
             final TextView textViewToChange = (TextView) findViewById(R.id.finalWeight);
             textViewToChange.setText(finalWeightString + "kg");
         } else {
+
             Log.i("Heads Up", "Could not calculate");
         }
 

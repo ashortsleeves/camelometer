@@ -5,7 +5,6 @@ import android.text.TextUtils;
 import android.util.Log;
 import android.view.View;
 import android.widget.RadioButton;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,9 +38,9 @@ public class CattleActivity  extends  AppCompatActivity{
 
         if (TextUtils.isEmpty(heartGirthString)){
 
-            heartGirthTextView.setError("Required Field");
+            heartGirthTextView.setError(getString(R.string.requiredField));
 
-            Toast.makeText(this, "Heart Girth is Required to Estimate.", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Heart Girth is Required to Estimate.", Toast.LENGTH_SHORT).show();
 
         } else {
 
@@ -57,7 +56,7 @@ public class CattleActivity  extends  AppCompatActivity{
 
                     Toast.makeText(this, "Unable to calculate. Enter a body length and try again.", Toast.LENGTH_LONG).show();
 
-                    bodyLengthTextView.setError("Required Field");
+                    bodyLengthTextView.setError(getString(R.string.requiredField));
 
                 } else {
 

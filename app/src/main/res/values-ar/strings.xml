@@ -1,0 +1,52 @@
+<resources>
+
+    <!-- ARABIC STRINGS -->
+
+    <!-- landing page -->
+    <string name="app_name">Camelometer</string>
+    <string name="subtitle">العثور على الوزن التقريبي للحيواناتدون مقياس.</string>
+    <string name="english">الإنجليزية</string>
+    <string name="arabic">عربى</string>
+
+    <!-- animals -->
+    <string name="camel">جمل</string>
+    <string name="sheepgoat">خروف/ماعز</string>
+    <string name="cattle">ماشية</string>
+    <string name="donkey">حمار</string>
+    <string name="horse">حصان</string>
+
+    <!-- shared -->
+    <string name="estimateBodyWeight">تقدير وزن الجسم</string>
+    <string name="defaultWeight">0kg</string>
+    <string name="kilogram">كلغ</string>
+    <string name="centimeter">سنتيمتر</string>
+    <string name="heartGirth">Heart Girth (cm)</string>
+    <string name="bodyLength_optional">Body Length (cm)*</string>
+    <string name="optional">*optional</string>
+    <string name="requiredField">Required Field</string>
+
+    <!-- camel page -->
+    <string name="camelTitle">العثور على الوزن التقريبي للجمال دون مقياس.</string>
+    <string name="heightAtWithersHint">الارتفاع عند الكتفين سنتيمتر</string>
+    <string name="chestGirth">محيط الصدر سنتيمتر</string>
+    <string name="humpGirth">الحدبة الطوق سنتيمتر</string>
+
+    <!-- sheep/goat page -->
+    <string name="sheepGoatTitle">Find approximate weight of Goat or Sheep without a scale.</string>
+
+
+    <!-- cattle page -->
+    <string name="origin">Origin:</string>
+    <string name="importCattle">استيراد</string>
+    <string name="domesticCattle">المنزلي</string>
+
+
+    <!-- donkey page -->
+    <string name="donkeyTitle">Find approximate weight of Donkey without a scale.</string>
+    <string name="male">الذكر</string>
+    <string name="female">أنثى</string>
+
+    <!-- horse page -->
+
+
+</resources>
