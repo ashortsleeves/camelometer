@@ -38,7 +38,7 @@ public class GoatActivity extends  AppCompatActivity{
 
             heartGirthTextView.setError("Required Field");
 
-            Toast.makeText(this, "Heart Girth is Required to Estimate.", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Heart Girth is Required to Estimate.", Toast.LENGTH_SHORT).show();
 
         } else {
 
@@ -52,9 +52,9 @@ public class GoatActivity extends  AppCompatActivity{
 
                 if (hearthGirthRoundedInt < 25 || hearthGirthRoundedInt > 107) {
 
-                    Toast.makeText(this, "Unable to calculate. Enter a body length and try again.", Toast.LENGTH_LONG).show();
+                    //Toast.makeText(this, "Unable to calculate. Enter a body length and try again.", Toast.LENGTH_LONG).show();
 
-                    bodyLengthTextView.setError("Required Field");
+                    bodyLengthTextView.setError(getString(R.string.requiredField));
 
                 } else {
 
@@ -176,7 +176,7 @@ public class GoatActivity extends  AppCompatActivity{
 
         String weightFromChartString = goatWeightChart.get(Integer.toString(hearthGirthRoundedInt));
 
-        weightFromChartString+= " kg";
+        weightFromChartString+= " " + getString(R.string.kilogram);
 
         return weightFromChartString;
 
@@ -189,7 +189,7 @@ public class GoatActivity extends  AppCompatActivity{
 
         String finalWeightString = numberFormat.format(finalWeightDouble);
 
-        finalWeightString+= " kg";
+        finalWeightString+= " " + getString(R.string.kilogram);
 
         finalWeightTextView.setText(finalWeightString);
 

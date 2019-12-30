@@ -90,7 +90,7 @@ public class CamelActivity extends  AppCompatActivity{
 
             //Change the value of the finalWeight TextView to the final number
             final TextView textViewToChange = (TextView) findViewById(R.id.finalWeight);
-            textViewToChange.setText(finalWeightString + "kg");
+            textViewToChange.setText(finalWeightString + " " + getString(R.string.kilogram));
         } else {
 
             Log.i("Heads Up", "Could not calculate");

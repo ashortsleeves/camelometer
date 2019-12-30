@@ -153,20 +153,5 @@
         app:layout_constraintStart_toEndOf="@id/button"
         app:layout_constraintTop_toBottomOf="@id/under3Years" />
 
-    <TextView
-        android:id="@+id/heartGirthOnlyWarning"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:gravity="center"
-        android:text="If only Heart Girth is provided the weight for thin cattle will be overestimated."
-        android:textColor="@android:color/holo_red_light"
-        android:textStyle="italic"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button" />
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

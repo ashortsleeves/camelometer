@@ -48,9 +48,9 @@ public class DonkeyActivity extends  AppCompatActivity{
 
         if (TextUtils.isEmpty(heartGirthString)){
 
-            heartGirthTextView.setError("Required Field");
+            heartGirthTextView.setError(getString(R.string.requiredField));
 
-            Toast.makeText(this, "Heart Girth is Required to Estimate Weight.", Toast.LENGTH_SHORT).show();
+            //Toast.makeText(this, "Heart Girth is Required to Estimate Weight.", Toast.LENGTH_SHORT).show();
 
         } else {
 
@@ -117,7 +117,7 @@ public class DonkeyActivity extends  AppCompatActivity{
 
         String finalWeightString = numberFormat.format(finalWeightDouble);
 
-        finalWeightString+= " kg";
+        finalWeightString+= " " + getString(R.string.kilogram);
 
         finalWeightTextView.setText(finalWeightString);
 
